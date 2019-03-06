@@ -1,0 +1,181 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 100;
+  font-size: 0.9em;
+}
+/* p {
+  font-size: 14px;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #f22),
+    color-stop(0.15, #f2f),
+    color-stop(0.3, #22f),
+    color-stop(0.45, #2ff),
+    color-stop(0.6, #2f2),
+    color-stop(0.75, #2f2),
+    color-stop(0.9, #ff2),
+    color-stop(1, #f22)
+  );
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+} */
+
+/* HOVER */
+.scene {
+  position: relative;
+  height: 100%;
+  background: url('./assets/text-bw.png') 50% 50% no-repeat fixed;
+}
+.hover-element {
+  z-index: 5;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  background: url('./assets/text-color.jpg') 50% 50% no-repeat fixed;
+  border-radius: 50%;
+}
+
+/* FOOTER */
+.work-container {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  z-index: 10;
+  height: 4rem;
+}
+.shape-wrapper {
+  text-align: center;
+}
+.shape-wrapper p {
+  opacity: 0;
+}
+.shape-wrapper:hover p {
+  opacity: 1;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid #f22;
+  opacity: 0.6;
+  transition: 1s;
+  cursor: pointer;
+}
+.triangle:hover {
+  opacity: 1;
+}
+.pentagon {
+  position: relative;
+  width: 44px;
+  box-sizing: content-box;
+  border-width: 40px 8px 0;
+  border-style: solid;
+  border-color: #ff2 transparent;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.pentagon:before {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -65px;
+  left: -8px;
+  border-width: 0 30px 25px;
+  border-style: solid;
+  border-color: transparent transparent #ff2;
+  cursor: pointer;
+}
+.pentagon:hover {
+  opacity: 1;
+}
+.circle {
+  width: 60px;
+  height: 60px;
+  background: #22f;
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.circle:hover {
+  opacity: 1;
+}
+.parallelogram {
+  width: 100px;
+  height: 50px;
+  transform: skew(20deg);
+  background: #2f2;
+  opacity: 0.6;
+}
+.parallelogram:hover {
+  opacity: 1;
+}
+.cone {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 60px solid #ff2;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.cone:hover {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  body {
+    padding: 0;
+  }
+  .hover-element {
+    background: url('./assets/text-color-sm.jpg') 50% 50% no-repeat fixed;
+  }
+  .scene {
+    background: url('./assets/text-bw-sm.png') 50% 50% no-repeat fixed;
+  }
+
+  .triangle {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 32px solid #f22;
+  }
+  .pentagon {
+    width: 24px;
+    border-width: 20px 8px 0;
+  }
+  .pentagon:before {
+    top: -35px;
+    left: -8px;
+    border-width: 0 20px 15px;
+  }
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+  .parallelogram {
+    width: 80px;
+    height: 30px;
+  }
+  .cone {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 40px solid #ff2;
+  }
+}
